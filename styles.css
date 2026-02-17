@@ -1,0 +1,136 @@
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+::selection {
+  background-color: hsl(160 84% 39%);
+  color: #fff;
+}
+
+/* Light mode */
+:root {
+  --bg: #ffffff;
+  --fg: hsl(220 20% 10%);
+  --card: #ffffff;
+  --card-border: hsl(160 20% 90%);
+  --muted: hsl(220 10% 45%);
+  --accent-bg: hsl(160 40% 95%);
+  --accent-fg: hsl(160 84% 30%);
+  --input-border: hsl(160 20% 90%);
+}
+
+.dark {
+  --bg: hsl(220 25% 8%);
+  --fg: hsl(0 0% 98%);
+  --card: hsl(220 25% 12%);
+  --card-border: hsl(220 25% 20%);
+  --muted: hsl(220 10% 60%);
+  --accent-bg: hsl(160 30% 15%);
+  --accent-fg: hsl(160 84% 60%);
+  --input-border: hsl(220 25% 20%);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
+}
+
+.card-custom {
+  background: var(--card);
+  border-color: var(--card-border);
+}
+
+.card-custom:hover {
+  border-color: hsl(160 84% 39% / 0.3);
+}
+
+.muted-text {
+  color: var(--muted);
+}
+
+.accent-badge {
+  background: var(--accent-bg);
+  color: var(--accent-fg);
+}
+
+.input-custom {
+  background: var(--card);
+  border-color: var(--input-border);
+  color: var(--fg);
+}
+
+.input-custom:focus {
+  box-shadow: 0 0 0 2px hsl(160 84% 39% / 0.5);
+  outline: none;
+}
+
+.input-custom::placeholder {
+  color: var(--muted);
+}
+
+/* Autofill fixes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--card) inset !important;
+  -webkit-text-fill-color: var(--fg) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.grad-primary {
+  background: linear-gradient(135deg, hsl(160 84% 39%), hsl(160 84% 50%));
+}
+
+.grad-secondary {
+  background: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 100% 60%));
+}
+
+.link-card {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid var(--card-border);
+}
+
+.link-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.widget-grad-1 {
+  background: linear-gradient(135deg, var(--card), hsl(160 84% 39% / 0.05));
+}
+
+.widget-grad-1:hover {
+  border-color: hsl(160 84% 39% / 0.5);
+  box-shadow: 0 20px 40px -15px hsl(160 84% 39% / 0.3);
+  background: linear-gradient(135deg, var(--card), hsl(160 84% 39% / 0.15));
+}
+
+.widget-grad-2 {
+  background: linear-gradient(135deg, var(--card), hsl(25 95% 53% / 0.05));
+}
+
+.widget-grad-2:hover {
+  border-color: hsl(25 95% 53% / 0.5);
+  box-shadow: 0 20px 40px -15px hsl(25 95% 53% / 0.3);
+  background: linear-gradient(135deg, var(--card), hsl(25 95% 53% / 0.15));
+}
+
+.widget-grad-3 {
+  background: linear-gradient(135deg, var(--card), hsl(210 100% 50% / 0.05));
+}
+
+.widget-grad-3:hover {
+  border-color: hsl(210 100% 50% / 0.5);
+  box-shadow: 0 20px 40px -15px hsl(210 100% 50% / 0.3);
+  background: linear-gradient(135deg, var(--card), hsl(210 100% 50% / 0.15));
+}
+
+.shadow-inner {
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
