@@ -83,17 +83,11 @@
     </div>
 
     <!-- Search -->
-    <form onsubmit="doSearch(event)" class="w-full max-w-2xl mx-auto">
-      <div class="relative">
-        <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 muted-text"
-          fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.3-4.3" />
-        </svg>
-        <input id="searchInput" type="text" placeholder="Pesquisar na web..."
-          class="w-full rounded-full border px-12 py-4 text-base shadow-sm transition-all input-custom focus:outline-none" />
+    <div class="w-full max-w-2xl mx-auto">
+      <div class="relative group">
+        <div class="gcse-search"></div>
       </div>
-    </form>
+    </div>
 
     <!-- Widgets -->
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl mx-auto px-4 mt-8">
@@ -167,6 +161,7 @@
     </section>
   </main>
 
+  <script async src="https://cse.google.com/cse.js?cx=c0ac16be1133b4488"></script>
   <script>
     // ── Theme ──
     const html = document.documentElement;
@@ -187,12 +182,6 @@
       document.getElementById("date").textContent = now.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
     }
     updateClock(); setInterval(updateClock, 1000);
-
-    function doSearch(e) {
-      e.preventDefault();
-      const q = document.getElementById("searchInput").value.trim();
-      if (q) window.open("https://www.google.com/search?q=" + encodeURIComponent(q), "_blank");
-    }
   </script>
 </body>
 
